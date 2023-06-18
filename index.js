@@ -12,8 +12,6 @@ const server = http.createServer((req,res)=>{
         default:
             res.end("404 page not found")
     }
-    res.write("Welcome\n")
-    return res.end("Hello World");
 })
 //port number is unique address on ram
 server.listen(port,(err)=>{
