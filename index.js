@@ -4,6 +4,8 @@ const port = 8000
 
 const server = http.createServer((req,res)=>{
     res.writeHead(200,{'Content-Type':'text/html'})
+
+    if(req.url==="/about")
    fs.readFile("index.html",(err,data)=>{
     if(err){
         res.end("Sorry 404 page not found")
@@ -12,6 +14,11 @@ const server = http.createServer((req,res)=>{
 
     res.end(data)
    })
+
+   else{
+    res.writeHead(404)
+    res.end("Sorry 404 page not found")
+   }
 })
 //port number is unique address on ram
 server.listen(port,(err)=>{
