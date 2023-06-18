@@ -1,7 +1,9 @@
 const http = require('http');
 const port = 8000
 
-const server = http.createServer()
+const server = http.createServer((req,res)=>{
+    return res.end("Hello World");
+})
 //port number is unique address on ram
 server.listen(port,(err)=>{
     if(err){
