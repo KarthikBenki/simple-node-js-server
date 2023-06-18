@@ -15,6 +15,17 @@ const server = http.createServer((req,res)=>{
     res.end(data)
    })
 
+   else if(req.url==="/login"){
+    fs.readFile("login.html",(err,data)=>{
+        if(err){
+            res.end("Sorry 404 page not found")
+            return
+        }
+    
+        res.end(data)
+       })
+   }
+
    else{
     res.writeHead(404)
     res.end("Sorry 404 page not found")
