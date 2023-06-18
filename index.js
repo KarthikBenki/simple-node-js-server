@@ -3,6 +3,14 @@ const port = 8000
 
 const server = http.createServer((req,res)=>{
     console.log(req.url);
+    switch(req.url){
+        case '/about':res.end("about")
+        break;
+        case "/login":res.end("login")
+        break;
+        default:
+            res.end("404 page not found")
+    }
     res.write("Welcome\n")
     return res.end("Hello World");
 })
