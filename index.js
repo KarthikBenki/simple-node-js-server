@@ -1,17 +1,17 @@
 const http = require('http');
+const fs = require('fs')
 const port = 8000
 
 const server = http.createServer((req,res)=>{
-    console.log(req.url);
-    res.writeHead(200,{'Content-Type':"text/html"})
-    switch(req.url){
-        case '/about':res.end("<h1>Welcome</h1>")
-        break;
-        case "/login":res.end("login")
-        break;
-        default:
-            res.end("404 page not found")
+    res.writeHead(200,{'Content-Type':'text/html'})
+   fs.readFile("index.html",(err,data)=>{
+    if(err){
+        res.end("Sorry 404 page not found")
+        return
     }
+
+    res.end(data)
+   })
 })
 //port number is unique address on ram
 server.listen(port,(err)=>{
