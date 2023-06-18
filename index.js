@@ -2,6 +2,7 @@ const http = require('http');
 const port = 8000
 
 const server = http.createServer((req,res)=>{
+    console.log(req.url);
     res.write("Welcome\n")
     return res.end("Hello World");
 })
