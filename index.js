@@ -14,3 +14,5 @@ server.listen(port,(err)=>{
     }
     console.log(`listening on port http://localhost:${port}`);
 })
+
+//127.0.0.1:8000 is a loop back  IP
